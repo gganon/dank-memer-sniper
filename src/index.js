@@ -161,7 +161,7 @@ client.on('messageCreate', async (message) => {
 		return;
 	}
 
-	if (message.content === "pls snipe") {
+	if (message.content?.toLowerCase() === "pls snipe") {
 		message.channel.send("Use the `/snipe` command!");
 	}
 });
