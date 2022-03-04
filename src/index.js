@@ -27,6 +27,10 @@ client.on("ready", () => {
 });
 
 client.on("messageDelete", async (message) => {
+	if (message.author.bot) {
+		return;
+	}
+
 	if (message.partial) return; // content is null or deleted embed
 
 	snipes[message.channel.id] = {
@@ -39,6 +43,10 @@ client.on("messageDelete", async (message) => {
 });
 
 client.on("messageUpdate", async (oldMessage, newMessage) => {
+	if (oldMessage.author.bot) {
+		return;
+	}
+
 	if (oldMessage.partial) return; // content is null
 
 	editSnipes[oldMessage.channel.id] = {
@@ -49,6 +57,10 @@ client.on("messageUpdate", async (oldMessage, newMessage) => {
 });
 
 client.on("messageReactionRemove", async (reaction, user) => {
+	if (user.bot) {
+		return;
+	}
+
 	if (reaction.partial) reaction = await reaction.fetch();
 
 	reactionSnipes[reaction.message.channel.id] = {
