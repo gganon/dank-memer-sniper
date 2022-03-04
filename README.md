@@ -4,6 +4,16 @@
 
 > An easy to run simple bot that lets you snipe messages in your Discord server.
 
+## Fork note
+
+This is a fork of [Dank Memer's snipe bot](https://github.com/DankMemer/sniper) with 2 additional features:
+
+1. If a user sends `pls snipe` to a channel, this bot will remind them to use the `/snipe` slash command instead
+
+2. If you have the original Dank Memer bot in your server, `pls snipe` might trigger it to send an annoying "Sniping is no longer possible" notice everytime. This bot will delete that message if it detects it so that your channel stays clean (and because this bot is handling `pls snipe` from now on)
+
+For (2.) to work, you will need to provide the Dank Memer bot's ID to this bot (See the config.json step)
+
 ## Setup
 
 Node.js 16.6.0 or newer is required.
@@ -11,7 +21,7 @@ Node.js 16.6.0 or newer is required.
 1. Run:
 
 ```bash
-$ git clone https://github.com/DankMemer/sniper.git
+$ git clone https://github.com/gganon/dank-memer-sniper.git
 $ cd ./sniper
 ```
 
@@ -20,7 +30,8 @@ $ cd ./sniper
 ```json
 {
 	"token": "<Your bot's token>",
-	"application_id": "<Your application's id>"
+	"application_id": "<Your application's id>",
+	"dank_memer_id": "<Dank Memer bot's ID (if it's in your server)>"
 }
 ```
 
