@@ -140,4 +140,14 @@ client.on("interactionCreate", async (interaction) => {
 	}
 });
 
+client.on('messageCreate', async (message) => {
+	if (message.author.bot) {
+		return;
+	}
+
+	if (message.content === "pls snipe") {
+		message.channel.send("Use the `/snipe` command!");
+	}
+});
+
 client.login(token);
