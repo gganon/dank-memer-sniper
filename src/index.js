@@ -153,10 +153,6 @@ client.on("interactionCreate", async (interaction) => {
 });
 
 client.on('messageCreate', async (message) => {
-	if (isDankMemerSnipeNotice(message)) {
-		await message.delete()
-	}
-
 	if (message.author.bot) {
 		return;
 	}
@@ -165,15 +161,4 @@ client.on('messageCreate', async (message) => {
 		message.channel.send("Use the `/snipe` command!");
 	}
 });
-
-const isDankMemerSnipeNotice = (message) => {
-	return (
-		message.author.id === dank_memer_id &&
-		message.embeds?.find(
-			(embed) =>
-				embed.title?.toLowerCase?.() === "sniping is no longer possible"
-		)
-	);
-}
-
 client.login(token);

@@ -6,13 +6,9 @@
 
 ## Fork note
 
-This is a fork of [Dank Memer's snipe bot](https://github.com/DankMemer/sniper) with 2 additional features:
+This is a fork of [Dank Memer's snipe bot](https://github.com/DankMemer/sniper) with 1 additional feature:
 
-1. If a user sends `pls snipe` to a channel, this bot will remind them to use the `/snipe` slash command instead
-
-2. If you have the original Dank Memer bot in your server, `pls snipe` might trigger it to send an annoying "Sniping is no longer possible" notice everytime. This bot will delete that message if it detects it so that your channel stays clean (and because this bot is handling `pls snipe` from now on)
-
-For (2.) to work, you will need to provide the Dank Memer bot's ID to this bot (See the config.json step)
+If a user sends `pls snipe` to a channel, this bot will remind them to use the `/snipe` slash command instead
 
 ## Setup
 
@@ -30,8 +26,7 @@ $ cd ./sniper
 ```json
 {
 	"token": "<Your bot's token>",
-	"application_id": "<Your application's id>",
-	"dank_memer_id": "<Dank Memer bot's ID (if it's in your server)>"
+	"application_id": "<Your application's id>"
 }
 ```
 
